@@ -1,0 +1,6 @@
+pymysql
+cachetools
+pyTelegramBotAPI
+tweepy
+aiohttp
+cryptography
