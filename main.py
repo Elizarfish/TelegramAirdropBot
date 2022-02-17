@@ -447,8 +447,8 @@ def callback_query(call):
                 bot.register_next_step_handler(call.message, address_check)
 
         elif call.data == 'done_requirements_telegram':
-            userinfo_1 = bot.get_chat_member("-", call.message.chat.id)
-            memberstatus_1 = userinfo_1.status
+            #userinfo_1 = bot.get_chat_member("-", call.message.chat.id)
+            #memberstatus_1 = userinfo_1.status
             userinfo_2 = bot.get_chat_member(-1001474922733, call.message.chat.id)
             memberstatus_2 = userinfo_2.status
 
@@ -458,7 +458,7 @@ def callback_query(call):
             elif len(airdrop_wallets) >= config.airdrop_cap:
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                         text=config.texts['airdrop_max_cap'], parse_mode='Markdown')
-            elif memberstatus_1 == 'left' or memberstatus_2 == 'left':
+            elif memberstatus_2 == 'left': # or memberstatus_1 == 'left':
                 bot.answer_callback_query(call.id, "⚠️ You didn't join all Groups/Channels.", show_alert=True)
             else:
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
